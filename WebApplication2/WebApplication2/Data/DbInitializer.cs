@@ -36,11 +36,11 @@ namespace WebApplication2.Data
 
             //for Credit - Aakash
 
-            //for Student - Mehar Choudhary
+            //for Student Id- Aakash
 
             //for DegreeCredit - Dasari
 
-            //for DegreePlan - Raviteja 
+            //for DegreePlan - Dasari
 
 
 
