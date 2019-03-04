@@ -43,26 +43,25 @@ namespace WebApplication2.Data
             }
             else
             {
-                var credits = new Credit[]
+                var credit = new Credits[]
                 {
-                    new Credit {CreditID=460, CreditName="Databases", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=356, CreditName="Network Fundamentals", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=542, CreditName="OOPS with Java", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=563, CreditName="Web Apps", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=560, CreditName="Advanced Databases", IsSummer=1, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=664, CreditName="User Experience", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=618, CreditName="Project Management", IsSummer=1, IsSpring=0, IsFall=0},
-                    new Credit {CreditID=555, CreditName="Network Security", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=691, CreditName="GDP1", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=692, CreditName="GDP2", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=6, CreditName="643 or 644 Mobile", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=10, CreditName="Elective 1", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=20, CreditName="Elective 2", IsSummer=0, IsSpring=1, IsFall=1},
-
+                    new Credits {CreditID=460, CreditName="Databases", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=356, CreditName="Network Fundamentals", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=542, CreditName="OOPS with Java", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=563, CreditName="Web Apps", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=560, CreditName="Advanced Databases", IsSummer=1, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=664, CreditName="User Experience", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=618, CreditName="Project Management", IsSummer=1, IsSpring=0, IsFall=0},
+                    new Credits {CreditID=555, CreditName="Network Security", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=691, CreditName="GDP1", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=692, CreditName="GDP2", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=6, CreditName="643 or 644 Mobile", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=10, CreditName="Elective 1", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credits {CreditID=20, CreditName="Elective 2", IsSummer=0, IsSpring=1, IsFall=1},
                 };
-                Console.WriteLine($"Inserted {credits.Length} new credits.");
+                Console.WriteLine($"Inserted {credit.Length} new credits.");
 
-                foreach (Credit d in credits)
+                foreach (Credits d in credit)
                 {
                     context.Credits.Add(d);
                 }
@@ -149,14 +148,14 @@ namespace WebApplication2.Data
             {
                 var degreePlans = new DegreePlan[]
                 {
-                    new DegreePlan {DegreePlanID=1234, StudentID=533904, DegreePlanAbbr= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1235, StudentID=533904, DegreePlanAbbr= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1239, StudentID=533489, DegreePlanAbbr= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1237, StudentID=533489, DegreePlanAbbr= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1238, StudentID=533976, DegreePlanAbbr= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1240, StudentID=533976, DegreePlanAbbr= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1240, StudentID=533714, DegreePlanAbbr= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1241, StudentID=533714, DegreePlanAbbr= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
+                    new DegreePlan {DegreePlanID=1234, StudentID=533904, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
+                    new DegreePlan {DegreePlanID=1235, StudentID=533904, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
+                    new DegreePlan {DegreePlanID=1239, StudentID=533489, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
+                    new DegreePlan {DegreePlanID=1237, StudentID=533489, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
+                    new DegreePlan {DegreePlanID=1238, StudentID=533976, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
+                    new DegreePlan {DegreePlanID=1240, StudentID=533976, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
+                    new DegreePlan {DegreePlanID=1240, StudentID=533714, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
+                    new DegreePlan {DegreePlanID=1241, StudentID=533714, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
 
 
 
@@ -172,25 +171,25 @@ namespace WebApplication2.Data
             }
 
             //for Student Id- Dasari
-            if (context.Students.Any())
+            if (context.StudentIds.Any())
             {
                 Console.WriteLine("Students already exist.");
             }
             else
             {
-                var students = new Student[]
+                var students = new StudentId[]
                 {
-                    new Student {StudentID=533904, Family= "Peddi", Given= "Tarak", Snumber="S533904", N919 = 91957050},
-                    new Student {StudentID=533976, Family= "Meenavilli", Given= "Mehar Choudhary", Snumber="S533976", N919 = 919571539},
-                    new Student {StudentID=533489, Family= "Dasari", Given= "Venkat", Snumber="S533489", N919 = 919568241},
-                    new Student {StudentID=533714, Family= "Valluru", Given= "Aakash", Snumber="S533714", N919 = 919568635},
+                    new StudentId {StudentID=533904, Family= "Peddi", Given= "Tarak", Snumber="S533904", N919 = 91957050},
+                    new StudentId {StudentID=533976, Family= "Meenavilli", Given= "Mehar Choudhary", Snumber="S533976", N919 = 919571539},
+                    new StudentId {StudentID=533489, Family= "Dasari", Given= "Venkat", Snumber="S533489", N919 = 919568241},
+                    new StudentId {StudentID=533714, Family= "Valluru", Given= "Aakash", Snumber="S533714", N919 = 919568635},
 
                 };
                 Console.WriteLine($"Inserted {students.Length} new students.");
 
-                foreach (Student d in students)
+                foreach (StudentId d in students)
                 {
-                    context.Students.Add(d);
+                    context.StudentIds.Add(d);
                 }
                 context.SaveChanges();
             }
