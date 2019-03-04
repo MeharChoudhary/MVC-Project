@@ -107,11 +107,31 @@ namespace WebApplication2.Data
             }
 
 
-            //for DegreePlan - Dasari
+            //for DegreePlan - Aakash
 
             //for Student Id- Dasari
+            if (context.Students.Any())
+            {
+                Console.WriteLine("Students already exist.");
+            }
+            else
+            {
+                var students = new Student[]
+                {
+                    new Student {StudentID=533904, Family= "Peddi", Given= "Tarak", Snumber="S533904", N919 = 91957050},
+                    new Student {StudentID=533976, Family= "Meenavilli", Given= "Mehar Choudhary", Snumber="S533976", N919 = 919571539},
+                    new Student {StudentID=533489, Family= "Dasari", Given= "Venkat", Snumber="S533489", N919 = 919568241},
+                    new Student {StudentID=533714, Family= "Valluru", Given= "Aakash", Snumber="S533714", N919 = 919568635},
 
+                };
+                Console.WriteLine($"Inserted {students.Length} new students.");
 
+                foreach (Student d in students)
+                {
+                    context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
 
             //for Slot - Raviteja
 
