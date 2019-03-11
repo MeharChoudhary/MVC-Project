@@ -1,12 +1,14 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication.Models
 {
     public class DegreeCredit
     {
-        public int DegreeCreditID { get; set; }
-         public int DegreeID { get; set; }
-       public int CreditID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int DegreeCreditId { get; set; }
+         public int DegreeId { get; set; }
+       public int CreditId { get; set; }
         
         
     }

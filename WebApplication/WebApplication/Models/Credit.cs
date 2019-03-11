@@ -1,10 +1,12 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication.Models
 {
     public class Credit
     {
-        public int CreditID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int CreditId { get; set; }
         public string CreditName { get; set; }
         public int IsSummer { get; set; }
         public int IsSpring { get; set; }

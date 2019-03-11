@@ -1,13 +1,15 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication.Models
 {
     public class Slot
     {
-        public int SlotID { get; set; }
-        public int DegreePlanID{ get; set; }
-        public int TermID { get; set; }
-        public int CreditID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int SlotId { get; set; }
+        public int DegreePlanId{ get; set; }
+        public int TermId { get; set; }
+        public int CreditId { get; set; }
         public string Status { get; set; }
        
     }

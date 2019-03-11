@@ -10,6 +10,7 @@ namespace WebApplication.Data
     {
         public static void Initialize(ApplicationDbContext context)
         {
+            context.Database.EnsureCreated();
             //for Degree Requirement - MEHAR CHOUDHARY
             if (context.DegreeRequirements.Any())
             {
@@ -19,10 +20,10 @@ namespace WebApplication.Data
             {
                 var degrees = new DegreeRequirement[]
                 {
-                    new DegreeRequirement { DegreeID = 1, DegreeAbbr = "ACS+2", NumberOfTerms= 5 },
-                    new DegreeRequirement { DegreeID = 2, DegreeAbbr = "ACS+DB", NumberOfTerms= 5 },
-                    new DegreeRequirement { DegreeID = 3, DegreeAbbr = "ACS+NF", NumberOfTerms= 5},
-                    new DegreeRequirement { DegreeID = 4, DegreeAbbr = "ACS", NumberOfTerms= 5 },
+                    new DegreeRequirement { DegreeId = 1, DegreeAbbr = "ACS+2", NumberOfTerms= 5 },
+                    new DegreeRequirement { DegreeId = 2, DegreeAbbr = "ACS+DB", NumberOfTerms= 5 },
+                    new DegreeRequirement { DegreeId = 3, DegreeAbbr = "ACS+NF", NumberOfTerms= 5},
+                    new DegreeRequirement { DegreeId = 4, DegreeAbbr = "ACS", NumberOfTerms= 5 },
                 };
                 Console.WriteLine($"Inserted {degrees.Length} new degrees.");
 
@@ -45,19 +46,19 @@ namespace WebApplication.Data
             {
                 var credit = new Credit[]
                 {
-                    new Credit {CreditID=460, CreditName="Databases", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=356, CreditName="Network Fundamentals", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=542, CreditName="OOPS with Java", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=563, CreditName="Web Apps", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=560, CreditName="Advanced Databases", IsSummer=1, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=664, CreditName="User Experience", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=618, CreditName="Project Management", IsSummer=1, IsSpring=0, IsFall=0},
-                    new Credit {CreditID=555, CreditName="Network Security", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=691, CreditName="GDP1", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=692, CreditName="GDP2", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=6, CreditName="643 or 644 Mobile", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=10, CreditName="Elective 1", IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=20, CreditName="Elective 2", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=460, CreditName="Databases", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=356, CreditName="Network Fundamentals", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=542, CreditName="OOPS with Java", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=563, CreditName="Web Apps", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=560, CreditName="Advanced Databases", IsSummer=1, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=664, CreditName="User Experience", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=618, CreditName="Project Management", IsSummer=1, IsSpring=0, IsFall=0},
+                    new Credit {CreditId=555, CreditName="Network Security", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=691, CreditName="GDP1", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=692, CreditName="GDP2", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=6, CreditName="643 or 644 Mobile", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=10, CreditName="Elective 1", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditId=20, CreditName="Elective 2", IsSummer=0, IsSpring=1, IsFall=1},
                 };
                 Console.WriteLine($"Inserted {credit.Length} new credits.");
 
@@ -78,54 +79,54 @@ namespace WebApplication.Data
             {
                 var degreeCredits = new DegreeCredit[]
                 {
-                    new DegreeCredit {DegreeCreditID=1, DegreeID=1, CreditID=460},
-                    new DegreeCredit {DegreeCreditID=2, DegreeID=1, CreditID=356},
-                    new DegreeCredit {DegreeCreditID=3, DegreeID=1, CreditID=542},
-                    new DegreeCredit {DegreeCreditID=4, DegreeID=1, CreditID=563},
-                    new DegreeCredit {DegreeCreditID=5, DegreeID=1, CreditID=560},
-                    new DegreeCredit {DegreeCreditID=6, DegreeID=1, CreditID=664},
-                    new DegreeCredit {DegreeCreditID=7, DegreeID=1, CreditID=618},
-                    new DegreeCredit {DegreeCreditID=8, DegreeID=1, CreditID=555},
-                    new DegreeCredit {DegreeCreditID=9, DegreeID=1, CreditID=691},
-                    new DegreeCredit {DegreeCreditID=10, DegreeID=1, CreditID=692},
-                    new DegreeCredit {DegreeCreditID=11, DegreeID=1, CreditID=6},
-                    new DegreeCredit {DegreeCreditID=12, DegreeID=1, CreditID=10},
-                    new DegreeCredit {DegreeCreditID=13, DegreeID=1, CreditID=20},
-                    new DegreeCredit {DegreeCreditID=14, DegreeID=2, CreditID=460},
-                    new DegreeCredit {DegreeCreditID=15, DegreeID=2, CreditID=542},
-                    new DegreeCredit {DegreeCreditID=16, DegreeID=2, CreditID=563},
-                    new DegreeCredit {DegreeCreditID=17, DegreeID=2, CreditID=560},
-                    new DegreeCredit {DegreeCreditID=18, DegreeID=2, CreditID=664},
-                    new DegreeCredit {DegreeCreditID=19, DegreeID=2, CreditID=618},
-                    new DegreeCredit {DegreeCreditID=20, DegreeID=2, CreditID=555},
-                    new DegreeCredit {DegreeCreditID=21, DegreeID=2, CreditID=691},
-                    new DegreeCredit {DegreeCreditID=22, DegreeID=2, CreditID=692},
-                    new DegreeCredit {DegreeCreditID=23, DegreeID=2, CreditID=6},
-                    new DegreeCredit {DegreeCreditID=24, DegreeID=2, CreditID=10},
-                    new DegreeCredit {DegreeCreditID=25, DegreeID=2, CreditID=20},
-                    new DegreeCredit {DegreeCreditID=26, DegreeID=3, CreditID=356},
-                    new DegreeCredit {DegreeCreditID=27, DegreeID=3, CreditID=542},
-                    new DegreeCredit {DegreeCreditID=28, DegreeID=3, CreditID=563},
-                    new DegreeCredit {DegreeCreditID=29, DegreeID=3, CreditID=560},
-                    new DegreeCredit {DegreeCreditID=30, DegreeID=3, CreditID=664},
-                    new DegreeCredit {DegreeCreditID=31, DegreeID=3, CreditID=618},
-                    new DegreeCredit {DegreeCreditID=32, DegreeID=3, CreditID=555},
-                    new DegreeCredit {DegreeCreditID=33, DegreeID=3, CreditID=691},
-                    new DegreeCredit {DegreeCreditID=34, DegreeID=3, CreditID=692},
-                    new DegreeCredit {DegreeCreditID=35, DegreeID=3, CreditID=6},
-                    new DegreeCredit {DegreeCreditID=36, DegreeID=3, CreditID=10},
-                    new DegreeCredit {DegreeCreditID=37, DegreeID=3, CreditID=20},
-                    new DegreeCredit {DegreeCreditID=38, DegreeID=4, CreditID=542},
-                    new DegreeCredit {DegreeCreditID=39, DegreeID=4, CreditID=563},
-                    new DegreeCredit {DegreeCreditID=40, DegreeID=4, CreditID=560},
-                    new DegreeCredit {DegreeCreditID=41, DegreeID=4, CreditID=664},
-                    new DegreeCredit {DegreeCreditID=42, DegreeID=4, CreditID=618},
-                    new DegreeCredit {DegreeCreditID=43, DegreeID=4, CreditID=555},
-                    new DegreeCredit {DegreeCreditID=44, DegreeID=4, CreditID=691},
-                    new DegreeCredit {DegreeCreditID=45, DegreeID=4, CreditID=692},
-                    new DegreeCredit {DegreeCreditID=46, DegreeID=4, CreditID=6},
-                    new DegreeCredit {DegreeCreditID=47, DegreeID=4, CreditID=10},
-                    new DegreeCredit {DegreeCreditID=48, DegreeID=4, CreditID=20},
+                    new DegreeCredit {DegreeCreditId=1, DegreeId=1, CreditId=460},
+                    new DegreeCredit {DegreeCreditId=2, DegreeId=1, CreditId=356},
+                    new DegreeCredit {DegreeCreditId=3, DegreeId=1, CreditId=542},
+                    new DegreeCredit {DegreeCreditId=4, DegreeId=1, CreditId=563},
+                    new DegreeCredit {DegreeCreditId=5, DegreeId=1, CreditId=560},
+                    new DegreeCredit {DegreeCreditId=6, DegreeId=1, CreditId=664},
+                    new DegreeCredit {DegreeCreditId=7, DegreeId=1, CreditId=618},
+                    new DegreeCredit {DegreeCreditId=8, DegreeId=1, CreditId=555},
+                    new DegreeCredit {DegreeCreditId=9, DegreeId=1, CreditId=691},
+                    new DegreeCredit {DegreeCreditId=10, DegreeId=1, CreditId=692},
+                    new DegreeCredit {DegreeCreditId=11, DegreeId=1, CreditId=6},
+                    new DegreeCredit {DegreeCreditId=12, DegreeId=1, CreditId=10},
+                    new DegreeCredit {DegreeCreditId=13, DegreeId=1, CreditId=20},
+                    new DegreeCredit {DegreeCreditId=14, DegreeId=2, CreditId=460},
+                    new DegreeCredit {DegreeCreditId=15, DegreeId=2, CreditId=542},
+                    new DegreeCredit {DegreeCreditId=16, DegreeId=2, CreditId=563},
+                    new DegreeCredit {DegreeCreditId=17, DegreeId=2, CreditId=560},
+                    new DegreeCredit {DegreeCreditId=18, DegreeId=2, CreditId=664},
+                    new DegreeCredit {DegreeCreditId=19, DegreeId=2, CreditId=618},
+                    new DegreeCredit {DegreeCreditId=20, DegreeId=2, CreditId=555},
+                    new DegreeCredit {DegreeCreditId=21, DegreeId=2, CreditId=691},
+                    new DegreeCredit {DegreeCreditId=22, DegreeId=2, CreditId=692},
+                    new DegreeCredit {DegreeCreditId=23, DegreeId=2, CreditId=6},
+                    new DegreeCredit {DegreeCreditId=24, DegreeId=2, CreditId=10},
+                    new DegreeCredit {DegreeCreditId=25, DegreeId=2, CreditId=20},
+                    new DegreeCredit {DegreeCreditId=26, DegreeId=3, CreditId=356},
+                    new DegreeCredit {DegreeCreditId=27, DegreeId=3, CreditId=542},
+                    new DegreeCredit {DegreeCreditId=28, DegreeId=3, CreditId=563},
+                    new DegreeCredit {DegreeCreditId=29, DegreeId=3, CreditId=560},
+                    new DegreeCredit {DegreeCreditId=30, DegreeId=3, CreditId=664},
+                    new DegreeCredit {DegreeCreditId=31, DegreeId=3, CreditId=618},
+                    new DegreeCredit {DegreeCreditId=32, DegreeId=3, CreditId=555},
+                    new DegreeCredit {DegreeCreditId=33, DegreeId=3, CreditId=691},
+                    new DegreeCredit {DegreeCreditId=34, DegreeId=3, CreditId=692},
+                    new DegreeCredit {DegreeCreditId=35, DegreeId=3, CreditId=6},
+                    new DegreeCredit {DegreeCreditId=36, DegreeId=3, CreditId=10},
+                    new DegreeCredit {DegreeCreditId=37, DegreeId=3, CreditId=20},
+                    new DegreeCredit {DegreeCreditId=38, DegreeId=4, CreditId=542},
+                    new DegreeCredit {DegreeCreditId=39, DegreeId=4, CreditId=563},
+                    new DegreeCredit {DegreeCreditId=40, DegreeId=4, CreditId=560},
+                    new DegreeCredit {DegreeCreditId=41, DegreeId=4, CreditId=664},
+                    new DegreeCredit {DegreeCreditId=42, DegreeId=4, CreditId=618},
+                    new DegreeCredit {DegreeCreditId=43, DegreeId=4, CreditId=555},
+                    new DegreeCredit {DegreeCreditId=44, DegreeId=4, CreditId=691},
+                    new DegreeCredit {DegreeCreditId=45, DegreeId=4, CreditId=692},
+                    new DegreeCredit {DegreeCreditId=46, DegreeId=4, CreditId=6},
+                    new DegreeCredit {DegreeCreditId=47, DegreeId=4, CreditId=10},
+                    new DegreeCredit {DegreeCreditId=48, DegreeId=4, CreditId=20},
 
                 };
                 Console.WriteLine($"Inserted {degreeCredits.Length} new degree credits.");
@@ -148,14 +149,14 @@ namespace WebApplication.Data
             {
                 var degreePlans = new DegreePlan[]
                 {
-                    new DegreePlan {DegreePlanID=1234, StudentID=533904, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1235, StudentID=533904, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1239, StudentID=533489, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1237, StudentID=533489, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1238, StudentID=533976, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1240, StudentID=533976, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1240, StudentID=533714, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementID=4},
-                    new DegreePlan {DegreePlanID=1241, StudentID=533714, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementID=4},
+                    new DegreePlan {DegreePlanId=1234, StudentId=533904, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementId=4},
+                    new DegreePlan {DegreePlanId=1235, StudentId=533904, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementId=4},
+                    new DegreePlan {DegreePlanId=1239, StudentId=533489, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementId=4},
+                    new DegreePlan {DegreePlanId=1237, StudentId=533489, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementId=4},
+                    new DegreePlan {DegreePlanId=1238, StudentId=533976, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementId=4},
+                    new DegreePlan {DegreePlanId=1236, StudentId=533976, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementId=4},
+                    new DegreePlan {DegreePlanId=1240, StudentId=533714, DegreePlanAbbrev= "Super Fast", DegreePlanName= "With Summer", DegreeRequirementId=4},
+                    new DegreePlan {DegreePlanId=1241, StudentId=533714, DegreePlanAbbrev= "Slow and Easy", DegreePlanName= "Without Summer", DegreeRequirementId=4},
 
 
 
@@ -171,25 +172,25 @@ namespace WebApplication.Data
             }
 
             //for Student Id- Dasari
-            if (context.StudentIds.Any())
+            if (context.Students.Any())
             {
                 Console.WriteLine("Students already exist.");
             }
             else
             {
-                var students = new StudentId[]
+                var students = new Student[]
                 {
-                    new StudentId {StudentID=533904, Family= "Peddi", Given= "Tarak", Snumber="S533904", N919 = 91957050},
-                    new StudentId {StudentID=533976, Family= "Meenavilli", Given= "Mehar Choudhary", Snumber="S533976", N919 = 919571539},
-                    new StudentId {StudentID=533489, Family= "Dasari", Given= "Venkat", Snumber="S533489", N919 = 919568241},
-                    new StudentId {StudentID=533714, Family= "Valluru", Given= "Aakash", Snumber="S533714", N919 = 919568635},
+                    new Student {StudentId=533904, Family= "Peddi", Given= "Tarak", Snumber="S533904", N919 = 91957050},
+                    new Student {StudentId=533976, Family= "Meenavilli", Given= "Mehar Choudhary", Snumber="S533976", N919 = 919571539},
+                    new Student {StudentId=533489, Family= "Dasari", Given= "Venkat", Snumber="S533489", N919 = 919568241},
+                    new Student {StudentId=533714, Family= "Valluru", Given= "Aakash", Snumber="S533714", N919 = 919568635},
 
                 };
                 Console.WriteLine($"Inserted {students.Length} new students.");
 
-                foreach (StudentId d in students)
+                foreach (Student d in students)
                 {
-                    context.StudentIds.Add(d);
+                    context.Students.Add(d);
                 }
                 context.SaveChanges();
             }
@@ -204,50 +205,50 @@ namespace WebApplication.Data
             {
                 var slots = new Slot[]
                 {
-                    new Slot {SlotID=1, DegreePlanID=1235, TermID=1, CreditID=542, Status="C"},
-                    new Slot {SlotID=2, DegreePlanID=1235, TermID=1, CreditID=563, Status="C"},
-                    new Slot {SlotID=3, DegreePlanID=1235, TermID=1, CreditID=560, Status="C"},
-                    new Slot {SlotID=4, DegreePlanID=1235, TermID=2, CreditID=664, Status="A"},
-                    new Slot {SlotID=5, DegreePlanID=1235, TermID=2, CreditID=6, Status="A"},
-                    new Slot {SlotID=6, DegreePlanID=1235, TermID=2, CreditID=10, Status="A"},
-                    new Slot {SlotID=7, DegreePlanID=1235, TermID=3, CreditID=618, Status="P"},
-                    new Slot {SlotID=8, DegreePlanID=1235, TermID=3, CreditID=691, Status="P"},
-                    new Slot {SlotID=9, DegreePlanID=1235, TermID=4, CreditID=692, Status="P"},
-                    new Slot {SlotID=10, DegreePlanID=1235, TermID=4, CreditID=20, Status="P"},
-                    new Slot {SlotID=11, DegreePlanID=1235, TermID=4, CreditID=555, Status="P"},
-                    new Slot {SlotID=12, DegreePlanID=1236, TermID=1, CreditID=542, Status="A"},
-                    new Slot {SlotID=13, DegreePlanID=1236, TermID=1, CreditID=563, Status="A"},
-                    new Slot {SlotID=14, DegreePlanID=1236, TermID=1, CreditID=560, Status="A"},
-                    new Slot {SlotID=15, DegreePlanID=1236, TermID=2, CreditID=664, Status="P"},
-                    new Slot {SlotID=16, DegreePlanID=1236, TermID=2, CreditID=6, Status="P"},
-                    new Slot {SlotID=17, DegreePlanID=1236, TermID=2, CreditID=10, Status="P"},
-                    new Slot {SlotID=18, DegreePlanID=1236, TermID=3, CreditID=20, Status="P"},
-                    new Slot {SlotID=19, DegreePlanID=1236, TermID=3, CreditID=555, Status="P"},
-                    new Slot {SlotID=20, DegreePlanID=1236, TermID=3, CreditID=691, Status="P"},
-                    new Slot {SlotID=21, DegreePlanID=1236, TermID=4, CreditID=618, Status="P"},
-                    new Slot {SlotID=22, DegreePlanID=1236, TermID=4, CreditID=692, Status="P"},                
-                    new Slot {SlotID=23, DegreePlanID=1239, TermID=1, CreditID=542, Status="C"},
-                    new Slot {SlotID=24, DegreePlanID=1239, TermID=1, CreditID=563, Status="C"},
-                    new Slot {SlotID=25, DegreePlanID=1239, TermID=1, CreditID=560, Status="C"},
-                    new Slot {SlotID=26, DegreePlanID=1239, TermID=2, CreditID=664, Status="A"},
-                    new Slot {SlotID=27, DegreePlanID=1239, TermID=2, CreditID=6, Status="A"},
-                    new Slot {SlotID=28, DegreePlanID=1239, TermID=2, CreditID=10, Status="A"},
-                    new Slot {SlotID=29, DegreePlanID=1239, TermID=3, CreditID=618, Status="P"},
-                    new Slot {SlotID=30, DegreePlanID=1239, TermID=4, CreditID=691, Status="P"},
-                    new Slot {SlotID=31, DegreePlanID=1239, TermID=4, CreditID=20, Status="P"},
-                    new Slot {SlotID=32, DegreePlanID=1239, TermID=5, CreditID=692, Status="P"},
-                    new Slot {SlotID=33, DegreePlanID=1239, TermID=5, CreditID=555, Status="P"},
-                    new Slot {SlotID=34, DegreePlanID=1240, TermID=1, CreditID=542, Status="A"},
-                    new Slot {SlotID=35, DegreePlanID=1240, TermID=1, CreditID=563, Status="A"},
-                    new Slot {SlotID=36, DegreePlanID=1240, TermID=1, CreditID=560, Status="A"},
-                    new Slot {SlotID=37, DegreePlanID=1240, TermID=2, CreditID=664, Status="P"},
-                    new Slot {SlotID=38, DegreePlanID=1240, TermID=2, CreditID=6, Status="P"},
-                    new Slot {SlotID=39, DegreePlanID=1240, TermID=2, CreditID=10, Status="P"},
-                    new Slot {SlotID=40, DegreePlanID=1240, TermID=3, CreditID=20, Status="P"},
-                    new Slot {SlotID=41, DegreePlanID=1240, TermID=3, CreditID=555, Status="P"},
-                    new Slot {SlotID=42, DegreePlanID=1240, TermID=3, CreditID=691, Status="P"},
-                    new Slot {SlotID=43, DegreePlanID=1240, TermID=4, CreditID=618, Status="P"},
-                    new Slot {SlotID=44, DegreePlanID=1240, TermID=4, CreditID=692, Status="P"},
+                    new Slot {SlotId=1, DegreePlanId=1235, TermId=1, CreditId=542, Status="C"},
+                    new Slot {SlotId=2, DegreePlanId=1235, TermId=1, CreditId=563, Status="C"},
+                    new Slot {SlotId=3, DegreePlanId=1235, TermId=1, CreditId=560, Status="C"},
+                    new Slot {SlotId=4, DegreePlanId=1235, TermId=2, CreditId=664, Status="A"},
+                    new Slot {SlotId=5, DegreePlanId=1235, TermId=2, CreditId=6, Status="A"},
+                    new Slot {SlotId=6, DegreePlanId=1235, TermId=2, CreditId=10, Status="A"},
+                    new Slot {SlotId=7, DegreePlanId=1235, TermId=3, CreditId=618, Status="P"},
+                    new Slot {SlotId=8, DegreePlanId=1235, TermId=3, CreditId=691, Status="P"},
+                    new Slot {SlotId=9, DegreePlanId=1235, TermId=4, CreditId=692, Status="P"},
+                    new Slot {SlotId=10, DegreePlanId=1235, TermId=4, CreditId=20, Status="P"},
+                    new Slot {SlotId=11, DegreePlanId=1235, TermId=4, CreditId=555, Status="P"},
+                    new Slot {SlotId=12, DegreePlanId=1236, TermId=1, CreditId=542, Status="A"},
+                    new Slot {SlotId=13, DegreePlanId=1236, TermId=1, CreditId=563, Status="A"},
+                    new Slot {SlotId=14, DegreePlanId=1236, TermId=1, CreditId=560, Status="A"},
+                    new Slot {SlotId=15, DegreePlanId=1236, TermId=2, CreditId=664, Status="P"},
+                    new Slot {SlotId=16, DegreePlanId=1236, TermId=2, CreditId=6, Status="P"},
+                    new Slot {SlotId=17, DegreePlanId=1236, TermId=2, CreditId=10, Status="P"},
+                    new Slot {SlotId=18, DegreePlanId=1236, TermId=3, CreditId=20, Status="P"},
+                    new Slot {SlotId=19, DegreePlanId=1236, TermId=3, CreditId=555, Status="P"},
+                    new Slot {SlotId=20, DegreePlanId=1236, TermId=3, CreditId=691, Status="P"},
+                    new Slot {SlotId=21, DegreePlanId=1236, TermId=4, CreditId=618, Status="P"},
+                    new Slot {SlotId=22, DegreePlanId=1236, TermId=4, CreditId=692, Status="P"},                
+                    new Slot {SlotId=23, DegreePlanId=1239, TermId=1, CreditId=542, Status="C"},
+                    new Slot {SlotId=24, DegreePlanId=1239, TermId=1, CreditId=563, Status="C"},
+                    new Slot {SlotId=25, DegreePlanId=1239, TermId=1, CreditId=560, Status="C"},
+                    new Slot {SlotId=26, DegreePlanId=1239, TermId=2, CreditId=664, Status="A"},
+                    new Slot {SlotId=27, DegreePlanId=1239, TermId=2, CreditId=6, Status="A"},
+                    new Slot {SlotId=28, DegreePlanId=1239, TermId=2, CreditId=10, Status="A"},
+                    new Slot {SlotId=29, DegreePlanId=1239, TermId=3, CreditId=618, Status="P"},
+                    new Slot {SlotId=30, DegreePlanId=1239, TermId=4, CreditId=691, Status="P"},
+                    new Slot {SlotId=31, DegreePlanId=1239, TermId=4, CreditId=20, Status="P"},
+                    new Slot {SlotId=32, DegreePlanId=1239, TermId=5, CreditId=692, Status="P"},
+                    new Slot {SlotId=33, DegreePlanId=1239, TermId=5, CreditId=555, Status="P"},
+                    new Slot {SlotId=34, DegreePlanId=1240, TermId=1, CreditId=542, Status="A"},
+                    new Slot {SlotId=35, DegreePlanId=1240, TermId=1, CreditId=563, Status="A"},
+                    new Slot {SlotId=36, DegreePlanId=1240, TermId=1, CreditId=560, Status="A"},
+                    new Slot {SlotId=37, DegreePlanId=1240, TermId=2, CreditId=664, Status="P"},
+                    new Slot {SlotId=38, DegreePlanId=1240, TermId=2, CreditId=6, Status="P"},
+                    new Slot {SlotId=39, DegreePlanId=1240, TermId=2, CreditId=10, Status="P"},
+                    new Slot {SlotId=40, DegreePlanId=1240, TermId=3, CreditId=20, Status="P"},
+                    new Slot {SlotId=41, DegreePlanId=1240, TermId=3, CreditId=555, Status="P"},
+                    new Slot {SlotId=42, DegreePlanId=1240, TermId=3, CreditId=691, Status="P"},
+                    new Slot {SlotId=43, DegreePlanId=1240, TermId=4, CreditId=618, Status="P"},
+                    new Slot {SlotId=44, DegreePlanId=1240, TermId=4, CreditId=692, Status="P"},
 
                 };
                 Console.WriteLine($"Inserted {slots.Length} new slots.");
@@ -268,19 +269,19 @@ namespace WebApplication.Data
             {
                 var studentTerms = new Term[]
                 {
-                    new  Term {StudentTermID=1, StudentID=533568, TermID=1, TermAbbr="F18", TermName="Fall 2018"},
-                    new Term {StudentTermID=2, StudentID=533568, TermID=2, TermAbbr="SP19", TermName="Spring 2019"},
-                    new Term {StudentTermID=3, StudentID=533568, TermID=3, TermAbbr="SU19", TermName="Summer 2019"},
-                    new Term {StudentTermID=4, StudentID=533568, TermID=4, TermAbbr="F19", TermName="Fall 2019"},
-                    new Term {StudentTermID=5, StudentID=533708, TermID=1, TermAbbr="F18", TermName="Fall 2018"},
-                    new Term {StudentTermID=6, StudentID=533708, TermID=2, TermAbbr="SP19", TermName="Spring 2019"},
-                    new Term {StudentTermID=7, StudentID=533708, TermID=3, TermAbbr="SU19", TermName="Summer 2019"},
-                    new Term {StudentTermID=8, StudentID=533708, TermID=4, TermAbbr="F19", TermName="Fall 2019"},
-                    new Term {StudentTermID=9, StudentID=533708, TermID=5, TermAbbr="SP20", TermName="Spring 2020"},
-                    new Term {StudentTermID=10, StudentID=533897, TermID=1, TermAbbr="SP20", TermName="Spring 2020"},
-                    new Term {StudentTermID=11, StudentID=533897, TermID=2, TermAbbr="FA20", TermName="Fall 2020"},
-                    new Term {StudentTermID=12, StudentID=533897, TermID=3, TermAbbr="SP21", TermName="Spring 2021"},
-                    new Term {StudentTermID=13, StudentID=533897, TermID=4, TermAbbr="SU21", TermName="Summer 2021"},
+                    new  Term {StudentTermId=1, StudentId=533568, TermId=1, TermAbbr="F18", TermName="Fall 2018"},
+                    new Term {StudentTermId=2, StudentId=533568, TermId=2, TermAbbr="SP19", TermName="Spring 2019"},
+                    new Term {StudentTermId=3, StudentId=533568, TermId=3, TermAbbr="SU19", TermName="Summer 2019"},
+                    new Term {StudentTermId=4, StudentId=533568, TermId=4, TermAbbr="F19", TermName="Fall 2019"},
+                    new Term {StudentTermId=5, StudentId=533708, TermId=1, TermAbbr="F18", TermName="Fall 2018"},
+                    new Term {StudentTermId=6, StudentId=533708, TermId=2, TermAbbr="SP19", TermName="Spring 2019"},
+                    new Term {StudentTermId=7, StudentId=533708, TermId=3, TermAbbr="SU19", TermName="Summer 2019"},
+                    new Term {StudentTermId=8, StudentId=533708, TermId=4, TermAbbr="F19", TermName="Fall 2019"},
+                    new Term {StudentTermId=9, StudentId=533708, TermId=5, TermAbbr="SP20", TermName="Spring 2020"},
+                    new Term {StudentTermId=10, StudentId=533897, TermId=1, TermAbbr="SP20", TermName="Spring 2020"},
+                    new Term {StudentTermId=11, StudentId=533897, TermId=2, TermAbbr="FA20", TermName="Fall 2020"},
+                    new Term {StudentTermId=12, StudentId=533897, TermId=3, TermAbbr="SP21", TermName="Spring 2021"},
+                    new Term {StudentTermId=13, StudentId=533897, TermId=4, TermAbbr="SU21", TermName="Summer 2021"},
 
                 };
                 Console.WriteLine($"Inserted {studentTerms.Length} new student terms.");

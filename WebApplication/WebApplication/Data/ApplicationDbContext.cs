@@ -7,6 +7,7 @@ using WebApplication.Models;
 
 namespace WebApplication.Data
 {
+    
     public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -17,7 +18,7 @@ namespace WebApplication.Data
         public DbSet<Credit> Credits { get; set; }
         public DbSet<DegreeCredit> DegreeCredits { get; set; }
         public DbSet<DegreePlan> DegreePlans { get; set; }
-        public DbSet<StudentId> StudentIds { get; set; }
+        public DbSet<Student> Students { get; set; }
         public DbSet<Slot> Slots { get; set; }
         public DbSet<Term> Terms { get; set; }
 
@@ -28,7 +29,7 @@ namespace WebApplication.Data
             modelBuilder.Entity<Credit>().ToTable("Credit");
             modelBuilder.Entity<DegreeCredit>().ToTable("DegreeCredit");
             modelBuilder.Entity<DegreePlan>().ToTable("DegreePlan");
-            modelBuilder.Entity<StudentId>().ToTable("Student");
+            modelBuilder.Entity<Student>().ToTable("Student");
             modelBuilder.Entity<Slot>().ToTable("Slot");
             modelBuilder.Entity<Term>().ToTable("StudentTerm");
         }

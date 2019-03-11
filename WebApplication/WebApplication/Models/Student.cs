@@ -1,10 +1,12 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication.Models
 {
-    public class StudentId
+    public class Student
     {
-        public int StudentID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int StudentId { get; set; }
         public string Family { get; set; }
         public string Given { get; set; }
      public string Snumber { get; set; }
