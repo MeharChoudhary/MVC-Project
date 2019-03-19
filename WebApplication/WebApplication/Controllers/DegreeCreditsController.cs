@@ -20,10 +20,43 @@ namespace WebApplication.Controllers
         }
 
         // GET: DegreeCredits
-        public async Task<IActionResult> Index()
+        
+        /*public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.DegreeCredits.Include(d => d.Credit).Include(d => d.Degree);
             return View(await applicationDbContext.ToListAsync());
+        }
+        */
+
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        {
+            //ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.NumberSortParm = String.IsNullOrEmpty(sortOrder) ? "number_desc" : "";
+            ViewBag.DegNumberSortParm = String.IsNullOrEmpty(sortOrder) ? "DegreeId_desc" : "";
+            var students = from s in _context.DegreeCredits
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.CreditId.ToString().Contains(searchString)
+                                       || s.DegreeId.ToString().Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "DegreeId_desc":
+                    students = students.OrderByDescending(s => s.DegreeId);
+                    break;
+                case "number_desc":
+                    students = students.OrderByDescending(s => s.CreditId);
+                    break;
+                case "number":
+                    students = students.OrderBy(s => s.CreditId);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.DegreeId);
+                    break;
+            }
+            return View(await students.AsNoTracking().ToListAsync());
         }
 
         // GET: DegreeCredits/Details/5

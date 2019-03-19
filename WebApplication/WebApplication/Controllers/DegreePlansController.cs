@@ -20,10 +20,58 @@ namespace WebApplication.Controllers
         }
 
         // GET: DegreePlans
-        public async Task<IActionResult> Index()
+
+        /*public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.DegreePlans.Include(d => d.Student);
             return View(await applicationDbContext.ToListAsync());
+        }*/
+        
+
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.PlanNameSortParm = String.IsNullOrEmpty(sortOrder) ? "plan_name_desc" : "";
+            ViewBag.NumberSortParm = String.IsNullOrEmpty(sortOrder) ? "number_desc" : "";
+            ViewBag.StudentNumberSortParm = String.IsNullOrEmpty(sortOrder) ? "student_desc" : "";
+            var students = from s in _context.DegreePlans
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.DegreePlanSelected.ToString().Contains(searchString)
+                                       || s.DegreePlanName.ToString().Contains(searchString)
+                                       || s.DegreePlanAbbr.ToString().Contains(searchString)
+                                       || s.Student.ToString().Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.DegreePlanAbbr);
+                    break;
+                case "plan_name":
+                    students = students.OrderByDescending(s => s.DegreePlanName);
+                    break;
+                case "plan_name_desc":
+                    students = students.OrderBy(s => s.DegreePlanName);
+                    break;
+                case "number_desc":
+                    students = students.OrderByDescending(s => s.DegreePlanSelected);
+                    break;
+                case "number":
+                    students = students.OrderBy(s => s.DegreePlanSelected);
+                    break;
+                case "student_desc":
+                    students = students.OrderByDescending(s => s.Student);
+                    break;
+                case "student":
+                    students = students.OrderBy(s => s.Student);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.DegreePlanAbbr);
+                    break;
+            }
+            return View(await students.AsNoTracking().ToListAsync());
         }
 
         // GET: DegreePlans/Details/5

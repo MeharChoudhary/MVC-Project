@@ -20,9 +20,40 @@ namespace WebApplication.Controllers
         }
 
         // GET: Degrees
-        public async Task<IActionResult> Index()
+
+        /*public async Task<IActionResult> Index()
         {
             return View(await _context.Degrees.ToListAsync());
+        }*/
+
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            //ViewBag.NumberSortParm = String.IsNullOrEmpty(sortOrder) ? "number_desc" : "";
+            var students = from s in _context.Degrees
+                           select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.DegreeAbbr.ToString().Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.DegreeAbbr);
+                    break;
+                /*case "number_desc":
+                    students = students.OrderByDescending(s => s.CreditId);
+                    break;
+                case "number":
+                    students = students.OrderBy(s => s.CreditId);
+                    break;*/
+                default:
+                    students = students.OrderBy(s => s.DegreeAbbr);
+                    break;
+            }
+            return View(await students.AsNoTracking().ToListAsync());
         }
 
         // GET: Degrees/Details/5
