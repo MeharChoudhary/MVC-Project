@@ -20,10 +20,57 @@ namespace WebApplication.Controllers
         }
 
         // GET: Slots
-        public async Task<IActionResult> Index()
+        /*public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Slots.Include(s => s.Credit).Include(s => s.DegreePlan);
-            return View(await applicationDbContext.ToListAsync());
+          var applicationDbContext = _context.Slots.Include(s => s.Credit).Include(s => s.DegreePlan);
+        return View(await applicationDbContext.ToListAsync());
+        }*/
+
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.NumberSortParm = String.IsNullOrEmpty(sortOrder) ? "number_desc" : "";
+            ViewBag.TermNumberSortParm = String.IsNullOrEmpty(sortOrder) ? "term_number_desc" : "";
+            ViewBag.DegplanNumberSortParm = String.IsNullOrEmpty(sortOrder) ? "degplan_number_desc" : "";
+            var students = from s in _context.Slots
+                           select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.Credit.ToString().Contains(searchString)
+                                       || s.Term.ToString().Contains(searchString)
+                                       || s.Status.ToString().Contains(searchString)
+                                       || s.DegreePlan.ToString().Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.Status);
+                    break;
+                case "number_desc":
+                    students = students.OrderByDescending(s => s.CreditId);
+                    break;
+                case "number":
+                    students = students.OrderBy(s => s.CreditId);
+                    break;
+                case "term_number_desc":
+                    students = students.OrderByDescending(s => s.Term);
+                    break;
+                case "term_number":
+                    students = students.OrderBy(s => s.Term);
+                    break;
+                case "degplan_number_desc":
+                    students = students.OrderByDescending(s => s.DegreePlan);
+                    break;
+                case "degplan_number":
+                    students = students.OrderBy(s => s.DegreePlan);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.Status);
+                    break;
+            }
+            return View(await students.AsNoTracking().ToListAsync());
         }
 
         // GET: Slots/Details/5

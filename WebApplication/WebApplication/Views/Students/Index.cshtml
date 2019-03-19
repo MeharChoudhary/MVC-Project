@@ -9,20 +9,31 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Family)
+                @Html.ActionLink("Family", "Index", new { sortOrder = ViewBag.NameSortParm })                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Given)
+                @Html.ActionLink("Given", "Index", new { sortOrder = ViewBag.GivenNameSortParm })                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Snumber)
+                @Html.ActionLink("Snumber", "Index", new { sortOrder = ViewBag.SnumNameSortParm })                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.N919)
+                @Html.ActionLink("N919", "Index", new { sortOrder = ViewBag.N919NameSortParm })                
             </th>
             <th></th>
         </tr>

@@ -20,10 +20,58 @@ namespace WebApplication.Controllers
         }
 
         // GET: StudentTerms
-        public async Task<IActionResult> Index()
+
+        /* public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Terms.Include(s => s.Student);
             return View(await applicationDbContext.ToListAsync());
+        }*/
+
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.TermAbbrSortParm = String.IsNullOrEmpty(sortOrder) ? "termabbr_name_desc" : "";
+            ViewBag.TermNumberSortParm = String.IsNullOrEmpty(sortOrder) ? "term_number_desc" : "";
+            ViewBag.StuidSortParm = String.IsNullOrEmpty(sortOrder) ? "stuid_desc" : "";
+
+            var students = from s in _context.Terms select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.TermName.ToString().Contains(searchString)
+                                       || s.TermAbbr.ToString().Contains(searchString)
+                                       || s.StudentId.ToString().Contains(searchString)
+                                       || s.Term.ToString().Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.TermName);
+                    break;
+                case "termabbr_name_desc":
+                    students = students.OrderByDescending(s => s.TermAbbr);
+                    break;
+                case "termabbr_name":
+                    students = students.OrderBy(s => s.TermAbbr);
+                    break;
+                case "stuid_desc":
+                    students = students.OrderByDescending(s => s.StudentId);
+                    break;
+                case "stuid":
+                    students = students.OrderBy(s => s.StudentId);
+                    break;
+                case "term_number_desc":
+                    students = students.OrderByDescending(s => s.Term);
+                    break;
+                case "term_number":
+                    students = students.OrderBy(s => s.Term);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.TermName);
+                    break;
+            }
+            return View(await students.AsNoTracking().ToListAsync());
         }
 
         // GET: StudentTerms/Details/5

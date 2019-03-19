@@ -9,19 +9,34 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
+                @Html.ActionLink("Term", "Index", new { sortOrder = ViewBag.TermNumberSortParm })
                 @Html.DisplayNameFor(model => model.Term)
             </th>
             <th>
+                @Html.ActionLink("TermAbbr", "Index", new { sortOrder = ViewBag.TermAbbrSortParm })
                 @Html.DisplayNameFor(model => model.TermAbbr)
             </th>
             <th>
+                @Html.ActionLink("TermName", "Index", new { sortOrder = ViewBag.NameSortParm })
                 @Html.DisplayNameFor(model => model.TermName)
             </th>
             <th>
+                @Html.ActionLink("Student", "Index", new { sortOrder = ViewBag.StuidSortParm })
                 @Html.DisplayNameFor(model => model.Student)
             </th>
             <th></th>
@@ -40,7 +55,7 @@
                 @Html.DisplayFor(modelItem => item.TermName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Student.StudentId)
+                @Html.DisplayFor(modelItem => item.StudentId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.StudentTermId">Edit</a> |
