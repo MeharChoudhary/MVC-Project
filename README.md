@@ -27,7 +27,7 @@
 |-------------------|----------|
 | multiplier        | 3        |
 | billing rate      | 210/hour |
-| hours/work        | 10       |
+| hours/week        | 10       |
 | weeks             | 4        |
 | no of developers  | 4        |
 | Cost              | 33600    |
