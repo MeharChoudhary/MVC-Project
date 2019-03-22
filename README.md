@@ -7,18 +7,18 @@
 - Dasari Venkat 
 ## How to clone and run our application 
 
-Step 1: 
-Copy the link of our repo.
-Step 2:
-Use tortoise git to clone our repo. 
+* Step 1: 
+- Copy the link of our repo.
+* Step 2:
+- Use tortoise git to clone our repo. 
 
 ### How to run our application. 
 
-Type 1:
-Got to the folder where the application is present and type dotnet run applicationname in powershell.
-Type 2: 
-Open the solution .sln file and click on the run button in visual studio.
-Link to the repo issues:  [Issues](https://github.com/MeharChoudhary/MVC-Project/issues?q=is%3Aissue+is%3Aclosed).
+* Type 1:
+- Got to the folder where the application is present and type dotnet run applicationname in powershell.
+* Type 2: 
+- Open the solution .sln file and click on the run button in visual studio.
+* Link to the repo issues:  [Issues](https://github.com/MeharChoudhary/MVC-Project/issues?q=is%3Aissue+is%3Aclosed).
 
 
 
