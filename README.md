@@ -17,10 +17,10 @@
 * Type 1:
 - Got to the folder where the application is present and type dotnet run applicationname in powershell.
 * Type 2: 
-- Open the solution .sln file and click on the run button in visual studio.
+- Open the solution .sln file and click on the run button in visual studio 2017.
 * Link to the repo issues:  [Issues](https://github.com/MeharChoudhary/MVC-Project/issues?q=is%3Aissue+is%3Aclosed).
 
-### Screenshots showing the application running
+### Screenshots showing the application running locally
 
 ![Screenshot (227)](https://user-images.githubusercontent.com/43078659/54853033-9cd0c100-4cbc-11e9-9f88-c35d5e585fdc.png)
 
