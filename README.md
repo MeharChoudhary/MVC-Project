@@ -20,7 +20,13 @@
 - Open the solution .sln file and click on the run button in visual studio.
 * Link to the repo issues:  [Issues](https://github.com/MeharChoudhary/MVC-Project/issues?q=is%3Aissue+is%3Aclosed).
 
+### Screenshots showing the application running
 
+![Screenshot (227)](https://user-images.githubusercontent.com/43078659/54853033-9cd0c100-4cbc-11e9-9f88-c35d5e585fdc.png)
+
+![Screenshot (228)](https://user-images.githubusercontent.com/43078659/54853034-9d695780-4cbc-11e9-8ea0-07dda728a936.png)
+
+![Screenshot (229)](https://user-images.githubusercontent.com/43078659/54853035-9d695780-4cbc-11e9-90fa-0e3d13b764f8.png)
 
 
 | Take home         | 70/hour  |
