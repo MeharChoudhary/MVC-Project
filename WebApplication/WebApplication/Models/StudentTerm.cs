@@ -15,6 +15,6 @@ namespace WebApplication.Models
         public string TermName { get; set; }
 
         public Student Student { get; set; }
-
+        public bool Done { get; set; }
     }
 }

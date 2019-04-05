@@ -15,6 +15,7 @@ namespace WebApplication.Models
         public int DegreePlanSelected { get; set; }
 
         public Student Student { get; set; }
+        public bool Done { get; set; }
 
 
     }

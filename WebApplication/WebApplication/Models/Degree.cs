@@ -9,7 +9,8 @@ namespace WebApplication.Models
         public int DegreeId { get; set; }
         public string DegreeAbbr { get; set; }
         public int NumberOfTerms { get; set; }
+        public bool Done { get; set; }
 
 
-}
+    }
 }

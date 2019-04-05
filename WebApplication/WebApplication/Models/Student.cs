@@ -13,7 +13,7 @@ namespace WebApplication.Models
         public string Given { get; set; }
         public string Snumber { get; set; }
         public int N919{ get; set; }
-
+        public bool Done { get; set; }
 
 
     }

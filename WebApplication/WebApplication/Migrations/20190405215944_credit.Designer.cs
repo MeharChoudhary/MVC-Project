@@ -10,8 +10,8 @@ using WebApplication.Data;
 namespace WebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190405213932_credits")]
-    partial class credits
+    [Migration("20190405215944_credit")]
+    partial class credit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -192,6 +192,8 @@ namespace WebApplication.Migrations
 
                     b.Property<string>("CreditName");
 
+                    b.Property<bool>("Done");
+
                     b.Property<int>("IsFall");
 
                     b.Property<int>("IsSpring");
@@ -209,6 +211,8 @@ namespace WebApplication.Migrations
 
                     b.Property<string>("DegreeAbbr");
 
+                    b.Property<bool>("Done");
+
                     b.Property<int>("NumberOfTerms");
 
                     b.HasKey("DegreeId");
@@ -223,6 +227,8 @@ namespace WebApplication.Migrations
                     b.Property<int>("CreditId");
 
                     b.Property<int>("DegreeId");
+
+                    b.Property<bool>("Done");
 
                     b.HasKey("DegreeCreditId");
 
@@ -243,6 +249,8 @@ namespace WebApplication.Migrations
 
                     b.Property<int>("DegreePlanSelected");
 
+                    b.Property<bool>("Done");
+
                     b.Property<int>("StudentId");
 
                     b.HasKey("DegreePlanId");
@@ -259,6 +267,8 @@ namespace WebApplication.Migrations
                     b.Property<int>("CreditId");
 
                     b.Property<int>("DegreePlanId");
+
+                    b.Property<bool>("Done");
 
                     b.Property<string>("Status");
 
@@ -277,6 +287,8 @@ namespace WebApplication.Migrations
                 {
                     b.Property<int>("StudentId");
 
+                    b.Property<bool>("Done");
+
                     b.Property<string>("Family");
 
                     b.Property<string>("Given");
@@ -293,6 +305,8 @@ namespace WebApplication.Migrations
             modelBuilder.Entity("WebApplication.Models.StudentTerm", b =>
                 {
                     b.Property<int>("StudentTermId");
+
+                    b.Property<bool>("Done");
 
                     b.Property<int>("StudentId");
 

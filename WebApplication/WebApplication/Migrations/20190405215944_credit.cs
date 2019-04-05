@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApplication.Migrations
 {
-    public partial class credits : Migration
+    public partial class credit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,7 +55,8 @@ namespace WebApplication.Migrations
                     CreditName = table.Column<string>(nullable: true),
                     IsSummer = table.Column<int>(nullable: false),
                     IsSpring = table.Column<int>(nullable: false),
-                    IsFall = table.Column<int>(nullable: false)
+                    IsFall = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,7 +69,8 @@ namespace WebApplication.Migrations
                 {
                     DegreeId = table.Column<int>(nullable: false),
                     DegreeAbbr = table.Column<string>(nullable: true),
-                    NumberOfTerms = table.Column<int>(nullable: false)
+                    NumberOfTerms = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -83,7 +85,8 @@ namespace WebApplication.Migrations
                     Family = table.Column<string>(nullable: true),
                     Given = table.Column<string>(nullable: true),
                     Snumber = table.Column<string>(nullable: true),
-                    N919 = table.Column<int>(nullable: false)
+                    N919 = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -202,7 +205,8 @@ namespace WebApplication.Migrations
                 {
                     DegreeCreditId = table.Column<int>(nullable: false),
                     DegreeId = table.Column<int>(nullable: false),
-                    CreditId = table.Column<int>(nullable: false)
+                    CreditId = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -229,7 +233,8 @@ namespace WebApplication.Migrations
                     StudentId = table.Column<int>(nullable: false),
                     DegreePlanAbbr = table.Column<string>(nullable: true),
                     DegreePlanName = table.Column<string>(nullable: true),
-                    DegreePlanSelected = table.Column<int>(nullable: false)
+                    DegreePlanSelected = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -250,7 +255,8 @@ namespace WebApplication.Migrations
                     StudentId = table.Column<int>(nullable: false),
                     Term = table.Column<int>(nullable: false),
                     TermAbbr = table.Column<string>(nullable: true),
-                    TermName = table.Column<string>(nullable: true)
+                    TermName = table.Column<string>(nullable: true),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -271,7 +277,8 @@ namespace WebApplication.Migrations
                     DegreePlanId = table.Column<int>(nullable: false),
                     Term = table.Column<int>(nullable: false),
                     CreditId = table.Column<int>(nullable: false),
-                    Status = table.Column<string>(nullable: true)
+                    Status = table.Column<string>(nullable: true),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
