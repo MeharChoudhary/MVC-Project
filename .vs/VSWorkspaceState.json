@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WebApplication",
+    "\\WebApplication\\WebApplication",
+    "\\WebApplication\\WebApplication\\Data"
   ],
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }
