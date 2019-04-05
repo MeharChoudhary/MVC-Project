@@ -10,7 +10,7 @@ using WebApplication.Data;
 namespace WebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190405222723_slot")]
+    [Migration("20190405223627_slot")]
     partial class slot
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
