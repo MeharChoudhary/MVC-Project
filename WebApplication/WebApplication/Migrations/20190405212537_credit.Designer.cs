@@ -10,8 +10,8 @@ using WebApplication.Data;
 namespace WebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190405210158_degree")]
-    partial class degree
+    [Migration("20190405212537_credit")]
+    partial class credit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
