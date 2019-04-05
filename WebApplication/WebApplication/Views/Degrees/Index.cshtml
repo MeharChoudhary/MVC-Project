@@ -23,11 +23,14 @@
 <table class="table">
     <thead>
         <tr>
-            <th>                
+            <th>
                 @Html.ActionLink("DegreeAbbr", "Index", new { sortOrder = ViewBag.NameSortParm })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NumberOfTerms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Done)
             </th>
             <th></th>
         </tr>
@@ -36,10 +39,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.DegreeAbbr)                
+                @Html.DisplayFor(modelItem => item.DegreeAbbr)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NumberOfTerms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Done)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.DegreeId">Edit</a> |

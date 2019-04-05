@@ -20,7 +20,7 @@
 </form>
 <table class="table">
     <thead>
-        <tr>                   
+        <tr>
             <th>
                 @Html.ActionLink("CreditName", "Index", new { sortOrder = ViewBag.NameSortParm })
             </th>
@@ -32,6 +32,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IsFall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Done)
             </th>
             <th></th>
         </tr>
@@ -50,6 +53,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IsFall)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Done)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.CreditId">Edit</a> |

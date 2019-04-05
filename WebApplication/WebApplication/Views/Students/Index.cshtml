@@ -24,16 +24,19 @@
     <thead>
         <tr>
             <th>
-                @Html.ActionLink("Family", "Index", new { sortOrder = ViewBag.NameSortParm })                
+                @Html.ActionLink("Family", "Index", new { sortOrder = ViewBag.NameSortParm })
             </th>
             <th>
-                @Html.ActionLink("Given", "Index", new { sortOrder = ViewBag.GivenNameSortParm })                
+                @Html.ActionLink("Given", "Index", new { sortOrder = ViewBag.GivenNameSortParm })
             </th>
             <th>
-                @Html.ActionLink("Snumber", "Index", new { sortOrder = ViewBag.SnumNameSortParm })                
+                @Html.ActionLink("Snumber", "Index", new { sortOrder = ViewBag.SnumNameSortParm })
             </th>
             <th>
-                @Html.ActionLink("N919", "Index", new { sortOrder = ViewBag.N919NameSortParm })                
+                @Html.ActionLink("N919", "Index", new { sortOrder = ViewBag.N919NameSortParm })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Done)
             </th>
             <th></th>
         </tr>
@@ -52,6 +55,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.N919)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Done)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> |
