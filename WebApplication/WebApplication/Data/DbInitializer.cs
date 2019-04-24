@@ -14,7 +14,8 @@ namespace WebApplication.Data
             //for Degree Requirement - MEHAR CHOUDHARY
             if (context.Degrees.Any())
             {
-                Console.WriteLine("Degrees already exist.");
+                Console.WriteLine("Degrees already exists.");
+
             }
             else
             {
