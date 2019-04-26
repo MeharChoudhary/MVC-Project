@@ -15,7 +15,7 @@ namespace WebApplication.Models
         [StringLength(15)]
         public string Family { get; set; }
         [DisplayName("Given Name")]
-        [StringLength(25)]
+        [StringLength(35)]
         public string Given { get; set; }
         public string Snumber { get; set; }
         public int N919{ get; set; }
