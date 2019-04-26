@@ -164,7 +164,7 @@ namespace WebApplication.Controllers
             return View(student);
         }
 
-        // GET: Students/Delete/5
+        // GET: Students/Delete/5 deleting student details here
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
