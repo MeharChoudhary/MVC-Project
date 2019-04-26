@@ -9,7 +9,7 @@ namespace WebApplication.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DegreeId { get; set; }
-        [StringLength(10)]
+        [StringLength(20)]
         public string DegreeAbbr { get; set; }
         [Range(0, 20)]
         public int NumberOfTerms { get; set; }
