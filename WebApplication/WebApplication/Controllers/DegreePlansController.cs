@@ -170,7 +170,7 @@ namespace WebApplication.Controllers
             return View(degreePlan);
         }
 
-        // GET: DegreePlans/Delete/5
+        // GET: DegreePlans/Delete/5 deleting degree plans
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
