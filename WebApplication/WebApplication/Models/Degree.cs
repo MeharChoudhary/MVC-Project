@@ -11,7 +11,7 @@ namespace WebApplication.Models
         public int DegreeId { get; set; }
         [StringLength(20)]
         public string DegreeAbbr { get; set; }
-        [Range(0, 20)]
+        [Range(0, 30)]
         public int NumberOfTerms { get; set; }
         public bool Done { get; set; }
         public ICollection<DegreeCredit> DegreeCredits { get; set; }
