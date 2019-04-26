@@ -15,7 +15,7 @@ namespace WebApplication.Models
         [DisplayName("Plan")]
         public string DegreePlanAbbr { get; set; }
         [DisplayName("Plan Name")]
-        [StringLength(50)]
+        [StringLength(60)]
         public string DegreePlanName { get; set; }
         public int DegreePlanSelected { get; set; }
 
