@@ -68,7 +68,7 @@ namespace WebApplication.Controllers
             return View(credit);
         }
 
-        // GET: Credits/Create
+        // GET: Credits/Create creating the credits
         public IActionResult Create()
         {
             return View();

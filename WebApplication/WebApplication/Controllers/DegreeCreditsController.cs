@@ -79,7 +79,7 @@ namespace WebApplication.Controllers
             return View(degreeCredit);
         }
 
-        // GET: DegreeCredits/Create
+        // GET: DegreeCredits/Creating credits here
         public IActionResult Create()
         {
             ViewData["CreditId"] = new SelectList(_context.Credits, "CreditId", "CreditId");
