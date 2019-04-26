@@ -10,17 +10,38 @@
     <h4>Degree</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DegreeAbbr)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DegreeAbbr)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.NumberOfTerms)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.NumberOfTerms)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DegreeCredits)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>CourseNumber</th>
+                    <th>DegreeId</th>
+                </tr>
+                @foreach (var item in Model.DegreeCredits.OrderBy(r => r.CreditId))
+
+
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.CreditId) </td>
+                        <td>@Html.DisplayFor(modelItem => item.DegreeId) </td>
+
+                    </tr>
+                }
+            </table>
         </dd>
     </dl>
 </div>
